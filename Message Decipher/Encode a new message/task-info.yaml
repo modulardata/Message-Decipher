@@ -1,0 +1,24 @@
+type: remote_edu
+files:
+  - name: message.txt
+    visible: true
+    learner_created: false
+  - name: secret-message.txt
+    visible: true
+    learner_created: false
+  - name: task.js
+    visible: true
+    learner_created: false
+  - name: test/__init__.py
+    visible: false
+    learner_created: false
+  - name: test/tests.py
+    visible: false
+    learner_created: false
+  - name: tests.py
+    visible: false
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/43538#comment
+check_profile: hyperskill_node_javascript
+status: Unchecked
+record: -1

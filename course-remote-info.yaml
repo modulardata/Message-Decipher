@@ -1,0 +1,112 @@
+hyperskill_project:
+  id: 436
+  ide_files: https://cogniterra.org/media/attachments/lesson/38115/additional_files.json
+  is_template_based: false
+  use_ide: true
+update_date: "Tue, 06 Aug 2024 06:20:02 UTC"
+stages:
+  - id: 2544
+    step: 43535
+    is_completed: true
+  - id: 2545
+    step: 43536
+    is_completed: false
+  - id: 2546
+    step: 43537
+    is_completed: false
+  - id: 2547
+    step: 43538
+    is_completed: false
+topics:
+  0:
+    - title: Comments
+      theory_id: 8170
+    - title: Operating systems
+      theory_id: 9704
+    - title: Command line overview
+      theory_id: 8977
+    - title: Parameters and options
+      theory_id: 9746
+    - title: World Wide Web
+      theory_id: 6633
+    - title: "HTTP: HyperText Transfer Protocol"
+      theory_id: 6569
+    - title: Introduction to Node.js
+      theory_id: 12691
+    - title: What is module?
+      theory_id: 26523
+    - title: Running Node.JS code
+      theory_id: 23880
+    - title: Introduction to JavaScript
+      theory_id: 8016
+    - title: Writing first program
+      theory_id: 8154
+    - title: Multi-line programs
+      theory_id: 8162
+    - title: Declaring variables
+      theory_id: 8186
+    - title: Web development
+      theory_id: 13931
+    - title: Strings and numbers
+      theory_id: 8194
+    - title: Arithmetic operators
+      theory_id: 8372
+    - title: Functions
+      theory_id: 8388
+    - title: Modules
+      theory_id: 9963
+    - title: CommonJS modules
+      theory_id: 23897
+    - title: ECMAScript modules
+      theory_id: 27792
+    - title: Global objects
+      theory_id: 29038
+    - title: Introduction to fs module
+      theory_id: 25757
+    - title: Write to file
+      theory_id: 25812
+    - title: What are streams?
+      theory_id: 29387
+    - title: Read stream
+      theory_id: 30367
+    - title: Intro to events module
+      theory_id: 23939
+  1:
+    - title: Defining functions
+      theory_id: 24012
+    - title: Anonymous function
+      theory_id: 26924
+    - title: Arrow Functions
+      theory_id: 8455
+    - title: Array
+      theory_id: 16141
+    - title: Array creation
+      theory_id: 16356
+    - title: Array sorting
+      theory_id: 16151
+    - title: Introduction to String
+      theory_id: 17747
+    - title: Basic string methods
+      theory_id: 17755
+    - title: String searching
+      theory_id: 17771
+    - title: Introduction to Regexp
+      theory_id: 17763
+  2:
+    - title: Archiving and extracting data
+      theory_id: 14190
+    - title: Introduction to Linux
+      theory_id: 9526
+    - title: Write Stream
+      theory_id: 30378
+    - title: Introduction to Streams module
+      theory_id: 31671
+  3:
+    - title: What is npm
+      theory_id: 13256
+    - title: Array transforming
+      theory_id: 16907
+    - title: What is a package manager?
+      theory_id: 26248
+    - title: "Taking input: sync-input library"
+      theory_id: 31844
