@@ -4,4 +4,4 @@ content:
   - Decipher the secret message
   - Write the decoded message to a file
   - Encode a new message
-current_task: 2
+current_task: 3
