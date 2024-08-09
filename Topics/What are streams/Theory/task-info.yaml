@@ -1,0 +1,27 @@
+type: theory
+files:
+  - name: main.js
+    visible: true
+    learner_created: false
+  - name: numbers.txt
+    visible: true
+    learner_created: true
+  - name: speed-test.txt
+    visible: true
+    learner_created: true
+  - name: data.txt
+    visible: true
+    learner_created: true
+  - name: input.txt
+    visible: true
+    learner_created: true
+  - name: output.txt
+    visible: true
+    learner_created: true
+  - name: file.txt
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/29387#comment
+status: Solved
+record: -1
+post_submission_on_open: true

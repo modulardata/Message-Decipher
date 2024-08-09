@@ -5,14 +5,17 @@ from hstest import StageTest, CheckResult, dynamic_test, TestedProgram
 
 
 class Feedback:
-    contain_msg = "Your output should contain the decoded message."
-    file_not_found_msg = "File secret-message.txt not found."
+    contain_msg = "Your new file should contain the decoded message."
+    file_not_found_msg = "File not found: "
     read_end_msg = "After reading the file, your output should contain the message: "
+    write_end_msg = "After writing the file, your output should contain the message: "
 
 
 class MessageDecipherTest(StageTest):
+    write_end_msg = "Finished writing the file"
     decode_end_msg = "Finished decoding the file"
     secret_message_path = "secret-message.txt"
+    decoded_path = "decoded-message.txt"
     letters = list(string.ascii_lowercase)
     reversed_letters = letters[::-1]
 
@@ -46,15 +49,25 @@ class MessageDecipherTest(StageTest):
 
         # test if the file exists
         if not file_output:
-            return CheckResult.wrong(Feedback.file_not_found_msg + f" {self.secret_message_path}")
+            return CheckResult.wrong(Feedback.file_not_found_msg + self.secret_message_path)
 
-        # test if the output is correct
-        if file_output.strip() not in output.strip():
+        decoded_output = self.read_file(self.decoded_path)
+
+        # test if the file exists
+        if not decoded_output:
+            return CheckResult.wrong(Feedback.file_not_found_msg + self.decoded_path)
+
+        # test if the decoded output is correct
+        if file_output.strip() not in decoded_output.strip():
             return CheckResult.wrong(Feedback.contain_msg)
 
-        # test if the message is correct
+        # test if the decode message is correct
         if self.decode_end_msg not in output.strip():
-            return CheckResult.wrong(Feedback.read_end_msg + f" '{self.decode_end_msg}'")
+            return CheckResult.wrong(Feedback.read_end_msg + f"'{self.decode_end_msg}'")
+
+        # test if the write message is correct
+        if self.write_end_msg not in output.strip():
+            return CheckResult.wrong(Feedback.write_end_msg + f"'{self.write_end_msg}'")
 
         return CheckResult.correct()
 

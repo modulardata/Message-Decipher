@@ -1,0 +1,34 @@
+<div class="step-text">
+<p></p><p>The concept of streams in Node.js is mentioned quite often among developers. Stream is a fundamental and important concept that many core Node.js modules implement. It is difficult to imagine the processing and transferring of large files or images without streams. They are a reliable tool for working with such large amounts of data. Let's explore streams as a part of Node.js!</p>
+<h5 id="what-are-streams">What are streams?</h5>
+<p><strong>Streams</strong> are objects that allow you to read and write data in small sets of data or chunks. Since data has to be loaded into memory for processing, if you read all the data at once and then try to process it, the computer memory may not be able to store all the data. Working with small chunks of data helps you avoid situations where the memory becomes clogged while processing large files. Also, using streams saves time while processing or transmitting data. Indeed, if you first copied all the data into memory and only then began to write and convert it, then you will spend quite a lot of time. If you started reading the file in chunks (small portions of data) and almost simultaneously writing them to another file, then you will spend much less time.</p>
+<h5 id="types-of-streams">Types of streams</h5>
+<p>Streams do not have to read, write, and transform data all at the same time. Different types of streams have varying functions. Let's look at them:</p>
+<ul>
+<li>Readable stream – used for reading data. For example, <code class="language-javascript">fs.createReadStream()</code> helps you read the contents of a file.</li>
+<li>Writable stream – used for writing data. For example, <code class="language-javascript">fs.createWriteStream()</code> lets you write data to a file.</li>
+<li>Duplex stream – used for both read and write operations. This type of stream allows you to read and write data at the same time, which is more convenient than using the two previous types of stream separately.</li>
+<li>Transform stream – a type of duplex stream that allows you to transform data. If you want to not only read and write files but also process them, then use the transform stream.</li>
+</ul>
+<p>All streams are instances of the <code class="language-javascript">EventEmitter</code> module. Moreover, streams generate events like <code class="language-javascript">data</code>, <code class="language-javascript">end</code>, <code class="language-javascript">error</code>, <code class="language-javascript">pause</code>, and <code class="language-javascript">close</code> events.</p>
+<h5 id="application">Application</h5>
+<p>As mentioned, you may encounter streams in many Node.js modules. Take a look at the following code snippet:</p>
+<pre><code class="language-javascript">const fs = require("node:fs");
+
+const readStream = fs.createReadStream("./data.txt", {
+    highWaterMark: 1000
+});
+
+readStream.on('data', (chunk) =&gt; {
+    console.log("New chunk!");
+    console.log(chunk);
+});</code></pre>
+<p>In this example, there is a readable stream called <code class="language-javascript">readStream</code> that reads the <em>data.txt</em> file. The <code class="language-javascript">highWaterMark</code> parameter sets the size of each chunk that will be read in KiB. The default value of <code class="language-javascript">highWaterMark</code> is 64 KiB.</p>
+<p>Readable streams emit <code class="language-javascript">data</code> event. You can handle this event and use it for various purposes. For example, displaying data to the console. In the code snippet, there is an event handler. The first argument of the event handles is the name of the generated event. The second argument is a callback that receives a chunk and prints it to the console.</p>
+<p>Executing the code snippet gives the following output:</p>
+<p style="text-align: center;"><picture><source media="(max-width: 480px)" srcset="https://ucarecdn.com/2fce8c47-cf1b-4895-9aa6-854266452e56/-/stretch/off/-/resize/480x/-/format/webp/ 1x,https://ucarecdn.com/2fce8c47-cf1b-4895-9aa6-854266452e56/-/stretch/off/-/resize/960x/-/format/webp/ 2x,https://ucarecdn.com/2fce8c47-cf1b-4895-9aa6-854266452e56/-/stretch/off/-/resize/1440x/-/format/webp/ 3x" type="image/webp"/><source media="(max-width: 800px)" srcset="https://ucarecdn.com/2fce8c47-cf1b-4895-9aa6-854266452e56/-/stretch/off/-/resize/800x/-/format/webp/ 1x,https://ucarecdn.com/2fce8c47-cf1b-4895-9aa6-854266452e56/-/stretch/off/-/resize/1600x/-/format/webp/ 2x,https://ucarecdn.com/2fce8c47-cf1b-4895-9aa6-854266452e56/-/stretch/off/-/resize/2400x/-/format/webp/ 3x" type="image/webp"/><source srcset="https://ucarecdn.com/2fce8c47-cf1b-4895-9aa6-854266452e56/-/stretch/off/-/resize/1100x/-/format/webp/ 1x,https://ucarecdn.com/2fce8c47-cf1b-4895-9aa6-854266452e56/-/stretch/off/-/resize/2200x/-/format/webp/ 2x,https://ucarecdn.com/2fce8c47-cf1b-4895-9aa6-854266452e56/-/stretch/off/-/resize/3000x/-/format/webp/ 3x" type="image/webp"/><img alt="New chunk! &lt;Buffer 65 6d 72 ... &gt;" height="146" name="image.png" src="https://ucarecdn.com/2fce8c47-cf1b-4895-9aa6-854266452e56/" width="967"/></picture></p>
+<p>By default, the data is represented as a buffer instead of a string. To change the output format to string, apply the <code class="language-javascript">toString()</code> method to each chunk. </p>
+<p>As you can see, streams allow you to read the file in chunks. These chunks can be processed before the entire file is read which maintains a steady stream of data being read, processed, and written/outputted.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>Node.js actively uses the concept of streams, which is why you might encounter them while using different core modules. Streams allow you to work with large files while only processing small parts of the file at a time. Streams also allow you to establish smooth data flow, reducing the time spent on processing them and increasing the convenience of reading, writing, or processing data.</p>
+</div>

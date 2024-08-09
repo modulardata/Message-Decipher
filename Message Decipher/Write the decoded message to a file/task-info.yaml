@@ -18,7 +18,13 @@ files:
   - name: tests.py
     visible: false
     learner_created: false
+  - name: decoded-message.txt
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/43537#comment
 check_profile: hyperskill_node_javascript
-status: Unchecked
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 09 Aug 2024 12:29:38 UTC"
 record: -1
